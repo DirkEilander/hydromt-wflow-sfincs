@@ -1,0 +1,139 @@
+dtu10mdt:
+  data_type: RasterDataset
+  path: dtu10mdt.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: topography
+    paper_doi: 10.1029/2008JC005179
+    paper_ref: Andersen and Knudsen (2009)
+    source_url: https://www.space.dtu.dk/english/research/scientific_data_and_models/global_mean_dynamic_topography
+    source_version: 2010
+    unit: m+EGM2008
+era5_hourly:
+  data_type: RasterDataset
+  path: era5_hourly_zarr/{variable}.nc
+  driver: netcdf
+  filesystem: local
+  crs: 4326
+  unit_mult:
+    kin: 0.000277778
+    kout: 0.000277778
+    ssr: 0.000277778
+    precip: 1000
+    press_msl: 0.01
+  unit_add:
+    temp: -273.15
+    temp_dew: -273.15
+  meta:
+    category: meteo
+    notes: Extracted from Copernicus Climate Data Store
+    paper_doi: 10.1002/qj.3803
+    paper_ref: Hersbach et al. (2019)
+    source_license: https://cds.climate.copernicus.eu/cdsapp/#!/terms/licence-to-use-copernicus-products
+    source_url: https://doi.org/10.24381/cds.bd0915c6
+    source_version: ERA5 hourly data on pressure levels
+fabdem:
+  data_type: RasterDataset
+  path: fabdem.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: topography
+    paper_doi: CC BY-NC-SA 4.0
+    paper_ref: Hawker et al. (2022)
+    source_license: CC BY-NC-SA 4.0
+    source_url: https://data.bris.ac.uk/data/dataset/25wfy0f9ukoge2gs7a5mqpq2j7
+    source_version: 1.0
+gcn250:
+  data_type: RasterDataset
+  path: gcn250/{variable}.tif
+  driver: raster
+  filesystem: local
+  nodata: 255
+  meta:
+    category: soil
+    paper_doi: 10.1038/s41597-019-0155-x
+    paper_ref: Jaafar et al. (2019)
+    source_license: CC BY 4.0
+    source_url: https://doi.org/10.6084/m9.figshare.7756202.v1
+    source_version: v1
+gebco:
+  data_type: RasterDataset
+  path: gebco.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: topography
+    paper_doi: 10.5285/a29c5465-b138-234d-e053-6c86abc040b9
+    paper_ref: Weatherall et al (2020)
+    source_license: https://www.gebco.net/data_and_products/gridded_bathymetry_data/#a1
+    source_url: https://www.bodc.ac.uk/data/open_download/gebco/gebco_2020/geotiff/
+    source_version: 2020
+    unit: m+MSL
+globcover:
+  data_type: RasterDataset
+  path: globcover.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: landuse
+    paper_doi: 10.1594/PANGAEA.787668
+    paper_ref: Arino et al (2012)
+    source_license: CC-BY-3.0
+    source_url: http://due.esrin.esa.int/page_globcover.php
+    source_version: v2.3
+merit_hydro:
+  data_type: RasterDataset
+  path: merit_hydro/{variable}.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: topography
+    paper_doi: 10.1029/2019WR024873
+    paper_ref: Yamazaki et al. (2019)
+    source_license: CC-BY-NC 4.0 or ODbL 1.0
+    source_url: http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro
+    source_version: 1.0
+osm_coastlines:
+  data_type: GeoDataFrame
+  path: osm_coastlines.gpkg
+  driver: vector
+  filesystem: local
+  crs: 4326
+  meta:
+    category: geography
+    notes: OpenStreetMap coastlines water polygons, last updated 2020-01-09T05:29
+    source_author: OpenStreetMap
+    source_license: ODbL
+    source_url: https://osmdata.openstreetmap.de/data/coastlines.html
+    source_version: 1.0
+rivers_lin2019_v1:
+  data_type: GeoDataFrame
+  path: rivers_lin2019_v1.gpkg
+  driver: vector
+  filesystem: local
+  meta:
+    category: hydrography
+    paper_doi: 10.5281/zenodo.3552776
+    paper_ref: Lin et al. (2019)
+    source_license: CC-BY-NC 4.0
+    source_url: https://zenodo.org/record/3552776#.YVbOrppByUk
+    source_version: 1
+vito:
+  data_type: RasterDataset
+  path: vito.tif
+  driver: raster
+  filesystem: local
+  crs: 4326
+  meta:
+    category: landuse
+    paper_doi: 10.5281/zenodo.3939038
+    paper_ref: Buchhorn et al (2020)
+    source_url: https://land.copernicus.eu/global/products/lc
+    source_version: v2.0.2

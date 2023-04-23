@@ -1,0 +1,13 @@
+gtsm_idai_era5_spw:
+  path: idai_era5_tides_his_beira_shww_egm.nc
+  crs: 4326
+  data_type: GeoDataset
+  driver: netcdf
+  rename:
+    stations: index
+    station_x_coordinate: x
+    station_y_coordinate: y
+  meta:
+    category: waterlevel
+    paper_doi: 10.5194/nhess-23-823-2023
+    paper_ref: Eilander et al (2021)
