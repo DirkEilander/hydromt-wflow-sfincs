@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DirkEilander/hydromt-wflow-sfincs/HEAD?labpath=src)
+
 ## Introduction
 
 In this notebook we build a coupled Wflow [van Verseveld et al. 2022] - SFINCS [Leijnse et al. 2021] model using HydroMT [Eilander et al. 2023].
