@@ -1,0 +1,41 @@
+setup_grid_from_region:
+  res: 150                     # model resolution
+  crs: utm                     # model CRS (must be UTM zone)
+  rotated: True                # allow a rotated grid
+
+setup_dep:
+  datasets_dep:
+  - elevtn: fabdem            # 1st elevation dataset
+    zmin: 0.001               # only valid values above zmin
+  - elevtn: merit_hydro       # 2nd elevation dataset
+
+setup_mask_active:            # use valid elevation
+  zmin: -5                     # only cells above zmin can be active bounddaries
+  drop_area: 100               # drop cells with area smaller than drop_area [km2]
+
+setup_mask_bounds:
+  btype: waterlevel            # Set waterlevel boundaries
+  zmax: 1                    # only cells below zmax can be waterlevel bounddaries
+
+setup_river_inflow:
+  hydrography: merit_hydro     # source hydrography data from which rivers are derived
+  river_upa: 200               # minimum upstream area threshold for the river map [km2]
+  river_len: 1000              # minimum river length threshold for the river map [m]
+  keep_rivers_geom: true       # keep the river geometry in the model
+
+setup_river_outflow:
+  btype: outflow               # Set open outflow boundaries
+  hydrography: merit_hydro     # source hydrography data from which rivers are derived
+  river_upa: 10                # minimum upstream area threshold for the river map [km2]
+  river_width: 2000            # minimum river width threshold for the river map [m]
+
+setup_subgrid:
+  datasets_dep:
+  - elevtn: fabdem             # 1st elevation dataset
+    zmin: 0.001                # only valid values above zmin
+  - elevtn: gebco              # 2nd elevation dataset
+  datasets_rgh:
+  - lulc: vito                 # 1st landuse dataset
+  write_dep_tif: true          # write the subgrid to a tif file
+  nr_subgrid_pixels: 6         # number of pixels per grid cell
+

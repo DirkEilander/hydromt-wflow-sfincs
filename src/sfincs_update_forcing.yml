@@ -1,0 +1,16 @@
+setup_config:
+  tref: 20190312 000000
+  tstart: 20190312 000000
+  tstop: 20190322 000000
+  dtout: 86400
+
+setup_discharge_forcing:
+  timeseries: wflow_run_era5
+
+setup_waterlevel_forcing:
+  geodataset: gtsm_idai_era5_spw
+  buffer: 5000                 # buffer around the waterlevel boundary cells in which to include gtsm stations [m]
+
+write_forcing:
+
+write_config:
