@@ -15,6 +15,7 @@ dependencies:
   - matplotlib
   - pip
   - python=3.10
+  - requests
   - pip:
     - gwwapi 
     - git+https://github.com/Deltares/hydromt_wflow.git@497b72f # gauges branch
