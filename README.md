@@ -12,7 +12,7 @@ Try the script yourself through [![Binder](https://mybinder.org/badge_logo.svg)]
 
 > "models created with a graphical user interface are not easily reproduced, archived, or independently verified." (Bakker et al. 2014)
 
-HydroMT aims to make the model building and analysis process:
+HydroMT (Eilander et al. 2023a) aims to make the model building and analysis process:
 
 - **Reproducible** by well-defined model building workflows, good documentation and meta data
 - **Fast** by automating the boring
@@ -28,7 +28,6 @@ Building a model with HydroMT consists of three steps:
 2. Configure your model setup in a yaml file
 3. Run HydroMT build command
 
-
 ## Case Study
 
 ### Introduction
@@ -37,14 +36,14 @@ Mozambique's Sofala province was hit by tropical Cyclone Idai in March 2019. Wit
 
 ### Model experiment
 
-Using HydroMT, we setup an offline coupled hydrological (Wflow; van Verseveld et al. 2022) - hydrodynamic (SFINCS; Leijnse et al. 2021) model to replicate the flood event (Eilander et al. 2023). Subsequently, we devise a model experiment to evaluate the sensitivity of both models towards two different land use (Vito, Globcover) and rainfall (ERA5, Chirps) data products. 
+Using HydroMT, we setup an offline coupled hydrological (Wflow; van Verseveld et al. 2022) - hydrodynamic (SFINCS; Leijnse et al. 2021) model to replicate the flood event (Eilander et al. 2023b). Subsequently, we devise a model experiment to evaluate the sensitivity of both models towards two different land use (Vito, Globcover) and rainfall (ERA5, Chirps) data products. 
 
 ## Lessons learned 
 - HydroMT facilitates setting up a reproducible model experiment: The workflow is well-defined, each step is documented, and the used input data is  open and accessible. See link to GitHub repository below for the full experiment.
 - HydroMT makes it easy to setup offline coupled models for supported software. See HydroMT docs for full list of supported model software.
 - Model input data is scattered around the web and behind many different APIs. More work should be done in making this data better accessible. 
 
-## Folder srtucture
+## Folder structure
 
 ```
 src
@@ -63,10 +62,11 @@ bin                 -> binary exectables for SFINCS and Wflow (not contained in 
 - [HydroMT-WFLOW docs](https://deltares.github.io/wflow_sfincs/latest/)
 
 
-### References
+## References
 - Bakker (2014). Python scripting: the return to programming. Ground Water, 52(6), 821–822. https://doi.org/10.1111/gwat.12269
-- Eilander, D., Boisgontier, H., Bouaziz, L. J. E., Buitink, J., Couasnon, A., Dalmijn, B., Hegnauer, M., de Jong, T., Loos, S., Marth, I., & van Verseveld, W. (2023). HydroMT: Automated and reproducible model building and analysis. Journal of Open Source Software, 8(83), 4897. https://doi.org/10.21105/joss.04897
-- Leijnse, T., van Ormondt, M., Nederhoff, K., & van Dongeren, A. (2021). Modeling compound flooding in coastal systems using a computationally efficient reduced-physics solver: Including fluvial, pluvial, tidal, wind- and wave-driven processes. Coastal Engineering, 163, 103796. https://doi.org/10.1016/j.coastaleng.2020.103796
-- van Verseveld, W. J., Weerts, A. H., Visser, M., Buitink, J., Imhoff, R. O., Boisgontier, H., Bouaziz, L., Eilander, D., Hegnauer, M., ten Velden, C., & Russell, B. (2022). Wflow_sbm v0.6.1, a spatially distributed hydrologic model: from global data to local applications. In Geoscientific Model Development Discussions. https://doi.org/10.5194/gmd-2022-182
+- Eilander et al. (2023a). HydroMT: Automated and reproducible model building and analysis. Journal of Open Source Software, 8(83), 4897. https://doi.org/10.21105/joss.04897
+- Eilander et al. (2023b). A globally-applicable framework for compound flood hazard modeling. Natural Hazards and Earth System Sciences, 23(2), 1–40. https://doi.org/10.5194/nhess-23-823-2023
+- Leijnse et al. (2021). Modeling compound flooding in coastal systems using a computationally efficient reduced-physics solver: Including fluvial, pluvial, tidal, wind- and wave-driven processes. Coastal Engineering, 163, 103796. https://doi.org/10.1016/j.coastaleng.2020.103796
+- van Verseveld et al. (2022). Wflow_sbm v0.6.1, a spatially distributed hydrologic model: from global data to local applications. In Geoscientific Model Development Discussions. https://doi.org/10.5194/gmd-2022-182
 - Stagge et al. (2019). Assessing data availability and research reproducibility in hydrology and water resources. Scientific Data, 6, 190030. https://doi.org/10.1038/sdata.2019.30
 
