@@ -18,5 +18,5 @@ dependencies:
   - requests
   - pip:
     - gwwapi 
-    - git+https://github.com/Deltares/hydromt_wflow.git@497b72f # gauges branch
+    - git+https://github.com/Deltares/hydromt_wflow.git@9175ea0 # gauges branch
     - git+https://github.com/Deltares/hydromt_sfincs.git@7169a74 # small bugfix for input file
