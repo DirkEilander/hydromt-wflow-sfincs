@@ -1,15 +1,15 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DirkEilander/hydromt-wflow-sfincs/HEAD?labpath=src)
-
 # Towards reproducible hydrological modeling with HydroMT
 
 This repository was build for the EGU GA 2023 presentation ["Towards reproducible hydrological modeling with HydroMT"](https://doi.org/10.5194/egusphere-egu23-13770)
 
-Try the script yourself through the binder environmente, by clicking the button above. 
-Donwload the full poster from [here](https://github.com/DirkEilander/hydromt-wflow-sfincs/releases/download/v1/EGU23_HydroMT_poster.pdf)
+The input data and poster are archived at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7858596.svg)](https://doi.org/10.5281/zenodo.7858596)
+
+Try the script yourself through [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DirkEilander/hydromt-wflow-sfincs/HEAD?labpath=src)
 
 ## Why HydroMT?
 
 > "results might be reproduced for only 0.6% to 6.8% of all 1,989 articles." (Stagge et al. 2019)
+
 > "models created with a graphical user interface are not easily reproduced, archived, or independently verified." (Bakker et al. 2014)
 
 HydroMT aims to make the model building and analysis process:
