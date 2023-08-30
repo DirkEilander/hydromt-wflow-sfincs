@@ -8,7 +8,7 @@ channels:
 dependencies:
   - cartopy>=0.20
   - descartes
-  - hydromt>=0.7.1
+  - hydromt==0.7.1
   - hydromt_sfincs>=1.0
   - hydromt_wflow
   - jupyterlab
