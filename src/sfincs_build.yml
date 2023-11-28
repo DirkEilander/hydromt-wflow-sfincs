@@ -8,9 +8,12 @@ setup_dep:
   - elevtn: fabdem            # 1st elevation dataset
     zmin: 0.001               # only valid values above zmin
   - elevtn: merit_hydro       # 2nd elevation dataset
+    zmin: 0.001               # only valid values above zmin
+  - elevtn: gebco             # 3rd elevation dataset
+    zmax: 0                   # only valid values below zmax
 
-setup_mask_active:            # use valid elevation
-  zmin: -5                     # only cells above zmin can be active bounddaries
+setup_mask_active:             # use valid elevation
+  zmin: -0.1                   # only cells above zmin can be active boundaries
   drop_area: 100               # drop cells with area smaller than drop_area [km2]
 
 setup_mask_bounds:

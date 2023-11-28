@@ -4,7 +4,20 @@ This repository was build for the EGU GA 2023 presentation ["Towards reproducibl
 
 The input data and poster are archived at [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7858596.svg)](https://doi.org/10.5281/zenodo.7858596)
 
-Try the script yourself through [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DirkEilander/hydromt-wflow-sfincs/HEAD?labpath=src)
+We use the compiled SFINCS v2.0.2 ([docs](https://sfincs.readthedocs.io/en/latest/)) 
+and Wflow v0.6.3 ([docs](https://deltares.github.io/Wflow.jl/dev/)), 
+follow the links in the references to download the source code or compiled software.
+
+All python requirements are set in the environment.yml file.
+To try the notebook scripts yourself start a new conda environment with:
+
+```bash
+mamba env create -f environment.yml
+conda activate hydromt
+```
+
+Then run the notebooks in the src folder in order of the numbers.
+
 
 ## Why HydroMT?
 
@@ -70,3 +83,9 @@ bin                 -> binary exectables for SFINCS and Wflow (not contained in 
 - van Verseveld et al. (2022). Wflow_sbm v0.6.1, a spatially distributed hydrologic model: from global data to local applications. In Geoscientific Model Development Discussions. https://doi.org/10.5194/gmd-2022-182
 - Stagge et al. (2019). Assessing data availability and research reproducibility in hydrology and water resources. Scientific Data, 6, 190030. https://doi.org/10.1038/sdata.2019.30
 
+
+
+## Changelog
+
+- 2023-04-25: EGU 23 release
+- 2023-11-28: DSD 23 update: upgrade to latest HydroMT-wflow and HydroMT-SFINCS versions 

@@ -1,6 +1,6 @@
 # This environment installs the latests released version of hydromt-sfincs,
 # including some dependencies to run the examples 
-name: hydromt
+name: hydromt-wflow-sfincs
 
 channels:
   - conda-forge
@@ -8,9 +8,8 @@ channels:
 dependencies:
   - cartopy>=0.20
   - descartes
-  - hydromt==0.7.1
-  - hydromt_sfincs>=1.0
-  - hydromt_wflow
+  - hydromt==0.9.1
+  - hydromt_wflow==0.4.1
   - jupyterlab
   - matplotlib
   - pip
@@ -18,5 +17,4 @@ dependencies:
   - requests
   - pip:
     - gwwapi 
-    - git+https://github.com/Deltares/hydromt_wflow.git@9175ea0 # gauges branch
-    - git+https://github.com/Deltares/hydromt_sfincs.git@7169a74 # small bugfix for input file
+    - git+https://github.com/Deltares/hydromt_sfincs.git@1542ebca3f4e3f876773a4f2da3d87e6ff49e417 # V1.0.2.dev with hydromt 0.9 support

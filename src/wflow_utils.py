@@ -58,15 +58,15 @@ def plot_basemap(mod, figsize = (10, 8), zoom_level = 10, shaded = False):
 
     # read and mask the model elevation
     maps = ["wflow_dem", "wflow_subcatch", "wflow_river"]
-    if not np.isin(maps, list(mod.staticmaps.data_vars.keys())).all():
+    if not np.isin(maps, list(mod.grid.data_vars.keys())).all():
         raise ValueError("Model instance does not contain required maps data.")
-    da = mod.staticmaps["wflow_dem"].raster.mask_nodata()
+    da = mod.grid["wflow_dem"].raster.mask_nodata()
     da.attrs.update(long_name="elevation", units="m")
     # read/derive river geometries
     gdf_riv = mod.rivers
     # read/derive model basin boundary
-    mod.staticmaps['wflow_subcatch'] = mod.staticmaps['wflow_subcatch'].astype(np.int32)
-    mod.staticmaps['wflow_subcatch'].raster.set_nodata(0)
+    mod.grid['wflow_subcatch'] = mod.grid['wflow_subcatch'].astype(np.int32)
+    mod.grid['wflow_subcatch'].raster.set_nodata(0)
     gdf_bas = mod.basins
 
     # initialize image with geoaxes
@@ -116,25 +116,25 @@ def plot_basemap(mod, figsize = (10, 8), zoom_level = 10, shaded = False):
     if gdf_bas is not None:
         gdf_bas.boundary.plot(ax=ax, color="k", linewidth=0.3)
     # plot various vector layers if present
-    gauges = [name for name in mod.staticgeoms if name.startswith("gauges")]
+    gauges = [name for name in mod.geoms if name.startswith("gauges")]
     for name in gauges:
-        mod.staticgeoms[name].plot(
+        mod.geoms[name].plot(
             ax=ax, marker="d", markersize=25, facecolor="red", zorder=5, label=name
         )
     patches = (
         []
     )  # manual patches for legend, see https://github.com/geopandas/geopandas/issues/660
-    if "lakes" in mod.staticgeoms:
+    if "lakes" in mod.geoms:
         kwargs = dict(facecolor="lightblue", edgecolor="black", linewidth=1, label="lakes")
-        mod.staticgeoms["lakes"].plot(ax=ax, zorder=4, **kwargs)
+        mod.geoms["lakes"].plot(ax=ax, zorder=4, **kwargs)
         patches.append(mpatches.Patch(**kwargs))
-    if "reservoirs" in mod.staticgeoms:
+    if "reservoirs" in mod.geoms:
         kwargs = dict(facecolor="white", edgecolor="black", linewidth=1, label="reservoirs")
-        mod.staticgeoms["reservoirs"].plot(ax=ax, zorder=4, **kwargs)
+        mod.geoms["reservoirs"].plot(ax=ax, zorder=4, **kwargs)
         patches.append(mpatches.Patch(**kwargs))
-    if "glaciers" in mod.staticgeoms:
+    if "glaciers" in mod.geoms:
         kwargs = dict(facecolor="grey", edgecolor="grey", linewidth=1, label="glaciers")
-        mod.staticgeoms["glaciers"].plot(ax=ax, zorder=4, **kwargs)
+        mod.geoms["glaciers"].plot(ax=ax, zorder=4, **kwargs)
         patches.append(mpatches.Patch(**kwargs))
 
     ax.xaxis.set_visible(True)
